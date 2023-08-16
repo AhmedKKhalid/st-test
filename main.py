@@ -24,7 +24,8 @@ with tab2:
 with tab3:
 
     current_dir = Path(__file__).parent
-    df_path = current_dir / 'Salesstore2.xlsx'
+    df_path = current_dir / 'Salesstore2.csv'
+
     df = pd.read_csv(df_path, encoding="ISO-8859-1", low_memory=False)
     data = st.columns(2)
     with data[0]:
@@ -47,8 +48,8 @@ with tab3:
 
 with tab4:
     current_dir = Path(__file__).parent
-    df_path = current_dir / 'Salesstore2.xlsx'
-    df = pd.read_excel(df_path,)
+    df_path = current_dir / 'Salesstore2.csv'
+    df = pd.read_csv(df_path, encoding="ISO-8859-1", low_memory=False)
     df1 = pd.DataFrame(df.head(5))
     st.dataframe(df1)
     st.title('Order Priority Dist')
