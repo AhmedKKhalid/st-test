@@ -27,6 +27,7 @@ with tab3:
     df_path = current_dir / 'Salesstore2.csv'
 
     df = pd.read_csv(df_path, encoding="ISO-8859-1", low_memory=False)
+    df['Order Date'] = pd.to_datetime(df['Order Date'])
     data = st.columns(2)
     with data[0]:
         Vis.visualize1(df)
