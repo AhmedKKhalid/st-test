@@ -6,7 +6,11 @@ import plotly.express as px
 from pathlib import Path
 import seaborn as sns
 st.set_page_config(layout="wide")
-
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+print(Path(__file__).parent)
+config = current_dir / '.streamlit' / 'config.toml'
+with open(config, 'r'):
+    pass
 tab1, tab2, tab3, tab4 = st.tabs(["Power Bi", "Tableau", "Plotly", "Stats"])
 with tab1:
     # components.html(r"""
